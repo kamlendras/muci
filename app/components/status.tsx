@@ -9,11 +9,14 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import AppRegistrationRoundedIcon from '@mui/icons-material/AppRegistrationRounded';
 import RouterIcon from '@mui/icons-material/Router';
 import LanguageIcon from '@mui/icons-material/Language';
+import LinearProgress from '@mui/joy/LinearProgress';
 export default function Home() {
   return (
     <>
+    <LinearProgress size="md" />
     <Typography level="body-sm">Internet Connection Status</Typography>
-    <Sheet variant="outlined" color="neutral" sx={{ p: 2,
+    <Sheet variant="outlined" color="neutral" sx={{ 
+      // p: 2,
      borderRadius: "sm",
     //         boxShadow: "xl",
             

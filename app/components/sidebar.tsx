@@ -1,5 +1,6 @@
 "use client"
 import * as React from 'react';
+
 import SvgIcon from '@mui/joy/SvgIcon';
 import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
@@ -23,8 +24,10 @@ import RepeatingTab from "./repeating"
 import WirelessTab from "./wireless"
 import AdvanceTab from "./advance"
 export default function TabsVertical() {
+
   return (
     <Tabs
+    
       aria-label="Vertical tabs"
       orientation="vertical"
     //   sx={{ minWidth: 300, height: 600 }}
