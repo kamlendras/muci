@@ -5,7 +5,7 @@ import Sheet from '@mui/joy/Sheet';
 export default function Home() {
   return (
     <>
-    <Sheet variant="soft" color="neutral" sx={{ p: 23 ,
+    <Sheet variant="soft" color="neutral" sx={{ p: 15 ,
     //  borderRadius: "lg",
             boxShadow: "xl",
             
