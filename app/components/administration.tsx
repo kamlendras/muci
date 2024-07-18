@@ -1,8 +1,10 @@
 "use client"
+import * as React from 'react';
 import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
 import Grid from '@mui/joy/Grid';
 import Textarea from '@mui/joy/Textarea';
+import Divider from '@mui/joy/Divider';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import Checkbox from '@mui/joy/Checkbox';
@@ -11,7 +13,25 @@ import Input from '@mui/joy/Input';
 import { useEffect, useState } from 'react';
 import Fade from "react-reveal/Fade";
 import LinearProgress from '@mui/joy/LinearProgress';
+import { styled } from '@mui/joy';
+
+const VisuallyHiddenInput = styled('input')`
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  width: 1px;
+`;
+
 export default function Home() {
+       const handleClick = async () => {
+              await sleep(2000);
+            };
+
        const [loading,setloading] = useState(true)
   useEffect(()=>{
   setTimeout(( )=>{
@@ -60,16 +80,17 @@ export default function Home() {
              </Grid>
       
              <Grid xs={5}>
-             <Select defaultValue="5" variant="outlined">
+             <Select defaultValue="4" variant="outlined">
         <Option value="1">1400</Option>
         <Option value="2">1450</Option>
         <Option value="3">1480</Option>
         <Option value="4">1492</Option>
-        <Option value="5">1500</Option>
+     
+        <Divider/>
         <Option value="6">Manual</Option>
       </Select>
        </Grid>
-       <Typography level="body-sm">Current MTU:1500 </Typography>
+       <Typography level="body-sm">Current MTU:1492</Typography>
       </Grid>
       <Grid container spacing={2} sx={{ flexGrow: 1 }}>
              <Grid xs={3}>
@@ -220,7 +241,7 @@ export default function Home() {
        
       </Grid>
            </Sheet>
-           
+           <Typography level="body-sm">Date & Time</Typography>
            <Sheet variant="soft" color="neutral" sx={{ p: 2,
      borderRadius: "lg",
             
@@ -319,7 +340,7 @@ export default function Home() {
              </Grid>
       
              <Grid xs={5}>
-             <Typography level="body-sm">2024-07-18 08:11:21</Typography>
+             2024-07-18 08:11:21
        </Grid>
        <Typography level="body-sm">Current date and time has synced with the Internet.</Typography>
       </Grid>
@@ -331,21 +352,35 @@ export default function Home() {
      borderRadius: "lg",
             
            }}>
-
+ <Grid container spacing={2} sx={{ flexGrow: 1 }}>
+             <Grid xs={3}>
+             <Typography level="body-lg">Reboot Router</Typography>
+             </Grid>
+      
+             <Grid xs={1.5}>
+             {/* <Button
+  disabled={false}
+  loading={false}
+  onClick={function(){}}
+  size="lg"
+  variant="solid"
+  fullWidth
+>Reboot</Button> */}
+<AsyncLoadingButton onClick={handleClick}>
+Reboot
+      </AsyncLoadingButton>
+       </Grid>
+       
+      </Grid>
       <Grid container spacing={2} sx={{ flexGrow: 1 }}>
              <Grid xs={3}>
              <Typography level="body-lg">Reset to Factory Defaults</Typography>
              </Grid>
       
              <Grid xs={1.5}>
-             <Button
-  color="neutral"
-  disabled={false}
-  loading={false}
-  onClick={function(){}}
-  size="md"
-  variant="outlined"
->Reset</Button>
+             <AsyncLoadingButton onClick={handleClick}>
+Reset
+      </AsyncLoadingButton>
        </Grid>
        
       </Grid>
@@ -355,14 +390,9 @@ export default function Home() {
              </Grid>
       
              <Grid xs={1.5}>
-             <Button
-  color="neutral"
-  disabled={false}
-  loading={false}
-  onClick={function(){}}
-  size="md"
-  variant="outlined"
->Backup</Button>
+             <AsyncLoadingButton onClick={handleClick}>
+Backup
+      </AsyncLoadingButton>
        </Grid>
        
       </Grid>
@@ -373,13 +403,20 @@ export default function Home() {
       
              <Grid xs={1.5}>
              <Button
-  color="neutral"
-  disabled={false}
-  loading={false}
-  onClick={function(){}}
-  size="md"
-  variant="outlined"
->Restore</Button>
+
+disabled={false}
+loading={false}
+component="label"
+    role={undefined}
+    tabIndex={-1}
+size="lg"
+variant="solid"
+fullWidth
+
+
+>Restore
+<VisuallyHiddenInput type="file" />
+</Button>
        </Grid>
        
       </Grid>
@@ -389,14 +426,9 @@ export default function Home() {
              </Grid>
       
              <Grid xs={1.5}>
-             <Button
-  color="neutral"
-  disabled={false}
-  loading={false}
-  onClick={function(){}}
-  size="md"
-  variant="outlined"
->Export</Button>
+             <AsyncLoadingButton onClick={handleClick}>
+Export
+      </AsyncLoadingButton>
        </Grid>
        
       </Grid>
@@ -407,13 +439,20 @@ export default function Home() {
       
              <Grid xs={1.5}>
              <Button
-  color="neutral"
+
   disabled={false}
   loading={false}
-  onClick={function(){}}
-  size="md"
-  variant="outlined"
->Browse...</Button>
+  component="label"
+      role={undefined}
+      tabIndex={-1}
+  size="lg"
+  variant="solid"
+  fullWidth
+
+ 
+>Browse
+<VisuallyHiddenInput type="file" />
+</Button>
        </Grid>
        <Typography level="body-sm">Current Firmware Version:v23.05.3</Typography>
       </Grid>
@@ -424,8 +463,8 @@ export default function Home() {
       
              <Grid xs={5}>
              <Checkbox label="Enable" variant="solid"  defaultChecked/>
-       </Grid>
        <Typography level="body-sm">During 03:00~05:00 (a.m.) each day,if no one is using the router, the router will auto-reboot.</Typography>
+       </Grid>
       </Grid>
       </Sheet>
       </Fade>
@@ -433,3 +472,28 @@ export default function Home() {
     </>
   );
 }
+
+const AsyncLoadingButton = ({ onClick, disabled, loading, ...props }) => {
+       const [isLoading, setIsLoading] = useState(false);
+     
+       const handleClick = async () => {
+         setIsLoading(true);
+         await onClick?.();
+         setIsLoading(false);
+       };
+     
+       return (
+         <Button
+         size='lg'
+         fullWidth
+           loading={isLoading || loading}
+           disabled={disabled || isLoading}
+           onClick={handleClick}
+           {...props}
+         />
+       );
+     };
+     
+     const sleep = (ms) => {
+       return new Promise((resolve) => setTimeout(resolve, ms));
+     };

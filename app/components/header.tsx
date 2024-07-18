@@ -6,7 +6,7 @@ import ColorSchemeToggle from "./ColorSchemeToggle";
 import Link from "next/link";
 import Button from "@mui/joy/Button";
 const items = [
-  { imageLight: 'url("/icon_black.svg")', imageDark: 'url("/icon_white.svg")' },
+  { imageLight: 'url("/icon_blackl.svg")', imageDark: 'url("/icon_whitel.svg")' },
 ];
 
 export default function Header() {
@@ -29,7 +29,7 @@ export default function Header() {
         zIndex: 1300,
       }}
     >
-      <Stack
+      {/* <Stack
         direction="row"
         justifyContent="center"
         alignItems="center"
@@ -39,8 +39,8 @@ export default function Header() {
         <div style={{ display: "flex" }}>
           <Box
             sx={{
-              mt: 1,
-              ml: 5,
+              // mt: 1,
+              // ml: 5,
               width: 300,
               height: 79,
               backgroundSize: "contain",
@@ -51,7 +51,7 @@ export default function Header() {
             }}
           />
         </div>
-      </Stack>
+      </Stack> */}
 
       <Box
         style={{ position: "fixed", right: 20, top: 10 }}
