@@ -30,7 +30,7 @@ export default function TabsVertical() {
     
       aria-label="Vertical tabs"
       orientation="vertical"
-      // sx={{ minWidth: 300, height: 600 }}
+      sx={{  minHeight: 700 }}
       size="lg"
     >
    
