@@ -1,3 +1,4 @@
+"use client"
 import Sheet from '@mui/joy/Sheet';
 import Grid from '@mui/joy/Grid';
 import Typography from '@mui/joy/Typography';
@@ -9,9 +10,20 @@ import Checkbox from '@mui/joy/Checkbox';
 import Select from '@mui/joy/Select';
 import Stack from '@mui/joy/Stack';
 import Option from '@mui/joy/Option';
+import { useEffect, useState } from 'react';
+import Fade from "react-reveal/Fade";
+import LinearProgress from '@mui/joy/LinearProgress';
 export default function Home() {
+  const [loading,setloading] = useState(true)
+  useEffect(()=>{
+  setTimeout(( )=>{
+    setloading(false)
+  },300);
+})
   return (
     <>
+     {loading ?    <LinearProgress variant="solid" />  : 
+     <Fade duration={200}>
      <Typography level="body-sm">Attached Devices</Typography>
     <Sheet variant="soft" color="neutral" sx={{ p: 2,
      borderRadius: "lg",  }}>
@@ -33,7 +45,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="Vivo" variant="soft" />
+<Input defaultValue="Vivo" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.135
@@ -48,7 +60,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="pixel 8" variant="soft" />
+<Input defaultValue="pixel 8" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.134
@@ -63,7 +75,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="Mi 10" variant="soft" />
+<Input defaultValue="Mi 10" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.174
@@ -78,7 +90,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="gentoobox" variant="soft" />
+<Input defaultValue="gentoobox" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.176
@@ -93,7 +105,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="Galaxy s24" variant="soft" />
+<Input defaultValue="Galaxy s24" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.134
@@ -108,7 +120,7 @@ export default function Home() {
        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
      <Grid xs={3}>
      
-<Input defaultValue="iphone" variant="soft" />
+<Input defaultValue="iphone" variant="outlined" />
        </Grid>
        <Grid xs={3}>
        192.168.0.189
@@ -257,6 +269,8 @@ export default function Home() {
        </Grid>
       </Grid>
       </Sheet>
+      </Fade>
+    }
     </>
   );
 }

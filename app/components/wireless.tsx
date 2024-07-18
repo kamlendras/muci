@@ -128,7 +128,7 @@ export default function Home() {
              <Grid xs={6}>
              <FormControl>
     
-      <RadioGroup defaultValue="medium" name="radio-buttons-group">
+      <RadioGroup defaultValue="n" name="radio-buttons-group">
       <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid xs={4}>
         <Radio value="y" label="Enable" color="primary" />
@@ -157,7 +157,7 @@ export default function Home() {
              <Grid xs={6}>
              <FormControl>
     
-      <RadioGroup defaultValue="medium" name="radio-buttons-group">
+      <RadioGroup defaultValue="n" name="radio-buttons-group">
       <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid xs={4}>
         <Radio value="y" label="Enable" color="primary" />

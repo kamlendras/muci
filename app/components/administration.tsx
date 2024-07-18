@@ -1,3 +1,4 @@
+"use client"
 import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
 import Grid from '@mui/joy/Grid';
@@ -7,9 +8,20 @@ import Option from '@mui/joy/Option';
 import Checkbox from '@mui/joy/Checkbox';
 import Button from '@mui/joy/Button';
 import Input from '@mui/joy/Input';
+import { useEffect, useState } from 'react';
+import Fade from "react-reveal/Fade";
+import LinearProgress from '@mui/joy/LinearProgress';
 export default function Home() {
+       const [loading,setloading] = useState(true)
+  useEffect(()=>{
+  setTimeout(( )=>{
+    setloading(false)
+  },300);
+})
   return (
     <>
+       {loading ?    <LinearProgress variant="solid" />  : 
+     <Fade duration={200}>
       <Typography level="body-sm">Login Password</Typography>
     <Sheet variant="soft" color="neutral" sx={{ p: 2,
      borderRadius: "lg",
@@ -416,6 +428,8 @@ export default function Home() {
        <Typography level="body-sm">During 03:00~05:00 (a.m.) each day,if no one is using the router, the router will auto-reboot.</Typography>
       </Grid>
       </Sheet>
+      </Fade>
+    }
     </>
   );
 }
