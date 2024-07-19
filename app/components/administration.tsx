@@ -328,7 +328,7 @@ export default function Home() {
           <Option value="71">(GMT+11:00)Magadan, Solomon Islands, New Caledonia and more</Option>
           <Option value="72">(GMT+12:00)Fiji Islands, Kamchatka Peninsula, the Marshall Islands</Option>
           <Option value="73">(GMT+12:00)Auckland , Wellington</Option>
-          <Option value="74">(GMT+13:00)Nuku'alofa</Option>
+          <Option value="74">(GMT+13:00)Nukualofa</Option>
         
        
       </Select>
@@ -366,7 +366,7 @@ export default function Home() {
   variant="solid"
   fullWidth
 >Reboot</Button> */}
-<AsyncLoadingButton onClick={handleClick}>
+<AsyncLoadingButton onClick={handleClick} disabled={undefined} loading={undefined}>
 Reboot
       </AsyncLoadingButton>
        </Grid>
@@ -378,7 +378,7 @@ Reboot
              </Grid>
       
              <Grid xs={1.5}>
-             <AsyncLoadingButton onClick={handleClick}>
+             <AsyncLoadingButton onClick={handleClick} disabled={undefined} loading={undefined}>
 Reset
       </AsyncLoadingButton>
        </Grid>
@@ -390,7 +390,7 @@ Reset
              </Grid>
       
              <Grid xs={1.5}>
-             <AsyncLoadingButton onClick={handleClick}>
+             <AsyncLoadingButton onClick={handleClick} disabled={undefined} loading={undefined}>
 Backup
       </AsyncLoadingButton>
        </Grid>
@@ -426,7 +426,7 @@ fullWidth
              </Grid>
       
              <Grid xs={1.5}>
-             <AsyncLoadingButton onClick={handleClick}>
+             <AsyncLoadingButton onClick={handleClick} disabled={undefined} loading={undefined}>
 Export
       </AsyncLoadingButton>
        </Grid>
@@ -472,6 +472,7 @@ Export
     </>
   );
 }
+
 
 const AsyncLoadingButton = ({ onClick, disabled, loading, ...props }) => {
        const [isLoading, setIsLoading] = useState(false);
