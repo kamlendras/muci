@@ -6,7 +6,7 @@ import ColorSchemeToggle from "./ColorSchemeToggle";
 import Link from "next/link";
 import Button from "@mui/joy/Button";
 const items = [
-  { imageLight: 'url("/icon_blackl.svg")', imageDark: 'url("/icon_whitel.svg")' },
+  { imageLight: 'url("/icon_black.svg")', imageDark: 'url("/icon_white.svg")' },
 ];
 
 export default function Header() {
@@ -21,28 +21,28 @@ export default function Header() {
   const [open, setOpen] = React.useState(false);
   return (
     <Box
-      style={{ position: "fixed" }}
+      // style={{ position: "fixed" }}
       sx={{
         display: "flex",
         flexGrow: 1,
         justifyContent: "space-between",
-        zIndex: 1300,
+        zIndex: 1000,
       }}
     >
-      {/* <Stack
+      <Stack
         direction="row"
         justifyContent="center"
         alignItems="center"
-        spacing={1}
-        sx={{ display: { xs: "none", sm: "flex" } }}
+        spacing={0}
+        // sx={{ display: { xs: "none", sm: "flex" } }}
       >
         <div style={{ display: "flex" }}>
           <Box
             sx={{
-              // mt: 1,
-              // ml: 5,
-              width: 300,
-              height: 79,
+              mt: 1,
+              ml: 5,
+              width: 227,
+              height: 60,
               backgroundSize: "contain",
               backgroundImage: (theme) =>
                 theme.palette.mode === "light"
@@ -51,7 +51,7 @@ export default function Header() {
             }}
           />
         </div>
-      </Stack> */}
+      </Stack>
 
       <Box
         style={{ position: "fixed", right: 20, top: 10 }}
@@ -60,12 +60,13 @@ export default function Header() {
           flexDirection: "row",
           gap: 1.5,
           alignItems: "center",
+          zIndex: 1000,
         }}
       >
         <ColorSchemeToggle />
         <Link href="/">
-          {" "}
-          <Button variant="outlined" size="md">
+         
+          <Button variant="solid" size="lg">
             Log out
           </Button>
         </Link>
