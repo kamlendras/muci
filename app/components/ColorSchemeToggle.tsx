@@ -4,8 +4,7 @@ import IconButton, { IconButtonProps } from '@mui/joy/IconButton';
 
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import Switch from '@mui/joy/Switch';
-import DarkMode from '@mui/icons-material/DarkMode';
+
 export default function ColorSchemeToggle(props: IconButtonProps) {
   const { onClick, sx, ...other } = props;
   const { mode, setMode } = useColorScheme();
@@ -14,36 +13,23 @@ export default function ColorSchemeToggle(props: IconButtonProps) {
     setMounted(true);
   }, []);
   if (!mounted) {
-    return (<>
-      <Switch
-      size="lg"
-      slotProps={{
-        input: { 'aria-label': 'Dark mode' },
-        thumb: {
-          children: <DarkMode />,
-        },
-      }}
-      sx={{
-        '--Switch-thumbSize': '16px',
-      }}
-    />
+    return (
       <IconButton
-      size="md"
-        variant="outlined"
-        color="neutral"
+      size="lg"
+        variant="soft"
+        color="primary"
         {...other}
         sx={sx}
         disabled
       />
-      </>
     );
   }
   return (
     <IconButton
       id="toggle-mode"
-      size="md"
-      variant="outlined"
-      color="neutral"
+      size="lg"
+      variant="soft"
+      color="primary"
       {...other}
       onClick={(event) => {
         if (mode === 'light') {

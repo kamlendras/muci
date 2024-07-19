@@ -37,7 +37,7 @@ export default function Home() {
                   label="PPPoE"
                   color="primary"
                   defaultChecked
-                  size="lg"
+                  size="md"
                 />
                 <PPPoE />
                 </Sheet>
@@ -46,7 +46,7 @@ export default function Home() {
             color="neutral"
             sx={{ p: 2, borderRadius: "lg",mt:2 }}
           >
-                <Radio value="2" label="Dynamic IP" color="primary" size="lg" />
+                <Radio value="2" label="Dynamic IP" color="primary" size="md" />
 
                 <DynamicIP />
                 </Sheet>
@@ -55,7 +55,7 @@ export default function Home() {
             color="neutral"
             sx={{ p: 2, borderRadius: "lg",mt:2  }}
           >
-                <Radio size="lg" value="3" label="Static IP" color="primary" />
+                <Radio size="md" value="3" label="Static IP" color="primary" />
            
                 <StaticIP />
                 </Sheet>

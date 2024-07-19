@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
     {/* <Header/> */}
-    <Sheet variant="soft" color="neutral" sx={{ m: 10,
-     borderRadius: "xl",
+    <Sheet variant="soft" color="neutral" sx={{ mt: 4,mb: 0, mx:15,
+     borderRadius: "xl", 
             boxShadow: "xl",
             
            }}>
