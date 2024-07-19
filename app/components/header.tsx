@@ -64,10 +64,10 @@ export default function Header() {
         }}
       >
         <ColorSchemeToggle />
-        <Link href="/">
+        <Link href="/login">
          
           <Button variant="solid" size="lg">
-            Log out
+            Log In
           </Button>
         </Link>
       </Box>
