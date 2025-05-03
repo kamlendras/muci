@@ -24,44 +24,43 @@ export default function Home() {
       ) : (
         <Fade duration={200}>
           <Typography level="body-lg">Connection Type</Typography>
-          
-            <FormControl>
-              <RadioGroup defaultValue="2" name="radio-buttons-group">
+
+          <FormControl>
+            <RadioGroup defaultValue="2" name="radio-buttons-group">
               <Sheet
-            variant="soft"
-            color="neutral"
-            sx={{ p: 2, borderRadius: "lg" }}
-          >
+                variant="soft"
+                color="neutral"
+                sx={{ p: 2, borderRadius: "xl" }}
+              >
                 <Radio
                   value="1"
                   label="PPPoE"
                   color="primary"
                   defaultChecked
-                  size="md"
+                  size="lg"
                 />
                 <PPPoE />
-                </Sheet>
-                <Sheet
-            variant="soft"
-            color="neutral"
-            sx={{ p: 2, borderRadius: "lg",mt:2 }}
-          >
-                <Radio value="2" label="Dynamic IP" color="primary" size="md" />
+              </Sheet>
+              <Sheet
+                variant="soft"
+                color="neutral"
+                sx={{ p: 2, borderRadius: "xl", mt: 2 }}
+              >
+                <Radio value="2" label="Dynamic IP" color="primary" size="lg" />
 
                 <DynamicIP />
-                </Sheet>
-                <Sheet
-            variant="soft"
-            color="neutral"
-            sx={{ p: 2, borderRadius: "lg",mt:2  }}
-          >
-                <Radio size="md" value="3" label="Static IP" color="primary" />
-           
+              </Sheet>
+              <Sheet
+                variant="soft"
+                color="neutral"
+                sx={{ p: 2, borderRadius: "xl", mt: 2 }}
+              >
+                <Radio size="lg" value="3" label="Static IP" color="primary" />
+
                 <StaticIP />
-                </Sheet>
-              </RadioGroup>
-            </FormControl>
-          
+              </Sheet>
+            </RadioGroup>
+          </FormControl>
         </Fade>
       )}
     </>
@@ -71,8 +70,8 @@ export default function Home() {
 const PPPoE = () => (
   <>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}></Grid>
-      <Grid xs={5}>
+      <Grid xs={12} xl={3}></Grid>
+      <Grid xs={12} xl={9}>
         <Typography level="body-sm">
           Select PPPoE if your Internet connection asks for the user name and
           password.
@@ -80,11 +79,11 @@ const PPPoE = () => (
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">User Name</Typography>
       </Grid>
 
-      <Grid xs={4.4}>
+      <Grid xs={12} xl={5}>
         <Textarea
           name="Outlined"
           placeholder="User Name from ISP"
@@ -93,11 +92,11 @@ const PPPoE = () => (
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Password</Typography>
       </Grid>
 
-      <Grid xs={4.4}>
+      <Grid xs={12} xl={5}>
         <Textarea
           name="Outlined"
           placeholder="Password from ISP"
@@ -111,8 +110,8 @@ const PPPoE = () => (
 const DynamicIP = () => (
   <>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}></Grid>
-      <Grid xs={5}>
+      <Grid xs={12} xl={3}></Grid>
+      <Grid xs={12} xl={9}>
         <Typography level="body-sm">
           Select Dynamic IP if your Internet can be auto-connected with no
           account or static IP info set.
@@ -120,10 +119,10 @@ const DynamicIP = () => (
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Connection Status</Typography>
       </Grid>
-      <Grid xs={3}>
+      <Grid xs={12} xl={9}>
         <Typography sx={{ color: "#00c853" }} level="body-lg">
           You can surf the Internet
         </Typography>
@@ -135,110 +134,110 @@ const DynamicIP = () => (
 const StaticIP = () => (
   <>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}></Grid>
-      <Grid xs={5}>
+      <Grid xs={12} xl={3}></Grid>
+      <Grid xs={12} xl={9}>
         <Typography level="body-sm">
           Select Static IP if your Internet connection asks for static IP info.
         </Typography>
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">IP Address</Typography>
       </Grid>
-      <Grid xs={1}>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Subnet Mask</Typography>
       </Grid>
-      <Grid xs={1}>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" defaultValue={255} />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" defaultValue={255} />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" defaultValue={255} />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" defaultValue={0} />
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Default Gateway</Typography>
       </Grid>
-      <Grid xs={1}>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Preferred DNS</Typography>
       </Grid>
-      <Grid xs={1}>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} xl={3}>
         <Typography level="body-lg">Alternative DNS</Typography>
       </Grid>
-      <Grid xs={1}>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
-      <Grid xs={0.01}>.</Grid>
-      <Grid xs={1}>
+      <Grid xs={0.01} className="hide">.</Grid>
+      <Grid xs={3} xl={1}>
         <Textarea name="Outlined" variant="outlined" />
       </Grid>
       <Grid xs={1}>(optional)</Grid>

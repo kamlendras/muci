@@ -1,21 +1,19 @@
-import Image from "next/image";
-// import styles from "./page.module.css";
-import SideBar from "./components/sidebar"
-import Sheet from '@mui/joy/Sheet';
-import Header from './components/header';
+import SideBar from "./components/sidebar";
+import Sheet from "@mui/joy/Sheet";
 export default function Home() {
   return (
     <>
-    {/* <Header/> */}
-    <Sheet variant="soft" color="neutral" sx={{ mt: 4,mb: 0, mx:15,
-     borderRadius: "xl", 
-            boxShadow: "xl",
-            
-           }}>
-    <SideBar/>
-    </Sheet>
-    
-    
+      <Sheet
+        variant="soft"
+        color="neutral"
+        className="sheet"
+        sx={{
+          borderRadius: "xl",
+          boxShadow: "xl",
+        }}
+      >
+        <SideBar />
+      </Sheet>
     </>
   );
 }
