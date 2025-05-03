@@ -7,20 +7,17 @@ import Grid from "@mui/joy/Grid";
 import Textarea from "@mui/joy/Textarea";
 import Button from "@mui/joy/Button";
 import Select from "@mui/joy/Select";
-import Box from "@mui/joy/Box";
 import Stack from "@mui/joy/Stack";
 import Option from "@mui/joy/Option";
 import Checkbox from "@mui/joy/Checkbox";
 import FormControl from "@mui/joy/FormControl";
-import FormLabel from "@mui/joy/FormLabel";
 import Radio from "@mui/joy/Radio";
 import RadioGroup from "@mui/joy/RadioGroup";
 import Fade from "react-reveal/Fade";
 import { useEffect, useState } from "react";
 import LinearProgress from "@mui/joy/LinearProgress";
+
 export default function Home() {
-
-
   const [showResults, setShowResults] = React.useState(false);
   const onClick = () => setShowResults(true);
   const onClick2 = () => setShowResults(false);
@@ -33,7 +30,7 @@ export default function Home() {
     setTimeout(() => {
       setloading(false);
     }, 300);
-  })
+  });
   return (
     <>
       {loading ? (
@@ -50,11 +47,13 @@ export default function Home() {
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
-                <Typography level="body-lg">WiFi ON/OFF</Typography>
+              <Grid xs={8} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  WiFi ON/OFF
+                </Typography>
               </Grid>
 
-              <Grid xs={1}>
+              <Grid xs={4} lg={9}>
                 <Switch
                   checked={checked}
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -100,27 +99,27 @@ export default function Home() {
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">WiFi Name</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={9} lg={5}>
                 <Textarea
                   name="Outlined"
                   defaultValue="freedom"
                   variant="outlined"
                 />
               </Grid>
-              <Grid xs={1}>
+              <Grid xs={2}>
                 <Checkbox label="Hide" size="sm" />
               </Grid>
             </Grid>
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">Security Mode</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={12} lg={5}>
                 <Select defaultValue="4" variant="outlined">
                   <Option value="1">None</Option>
                   <Option value="2">WPA-PSK</Option>
@@ -130,11 +129,11 @@ export default function Home() {
               </Grid>
             </Grid>
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">WiFi Password</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={12} lg={5}>
                 <Textarea
                   name="Outlined"
                   defaultValue="freedom@777"
@@ -154,15 +153,17 @@ export default function Home() {
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
-                <Typography level="body-lg">WiFi Schedule</Typography>
+              <Grid xs={12} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  WiFi Schedule
+                </Typography>
               </Grid>
 
               <Grid xs={6}>
                 <FormControl>
                   <RadioGroup defaultValue="n" name="radio-buttons-group">
                     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-                      <Grid xs={4}>
+                      <Grid xs={12} lg={4}>
                         <Radio
                           value="y"
                           label="Enable"
@@ -170,7 +171,7 @@ export default function Home() {
                           onClick={onClick}
                         />
                       </Grid>
-                      <Grid xs={4}>
+                      <Grid xs={12} lg={4}>
                         <Radio
                           value="n"
                           label="Disable"
@@ -197,7 +198,7 @@ export default function Home() {
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">WPS</Typography>
               </Grid>
 
@@ -205,7 +206,7 @@ export default function Home() {
                 <FormControl>
                   <RadioGroup defaultValue="n" name="radio-buttons-group">
                     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-                      <Grid xs={4}>
+                      <Grid xs={12} lg={4}>
                         <Radio
                           value="y"
                           label="Enable"
@@ -213,7 +214,7 @@ export default function Home() {
                           onClick={onClick3}
                         />
                       </Grid>
-                      <Grid xs={4}>
+                      <Grid xs={12} lg={4}>
                         <Radio
                           value="n"
                           label="Disable"
@@ -236,15 +237,14 @@ export default function Home() {
             sx={{
               p: 2,
               borderRadius: "lg",
-              // boxShadow: "xl",
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">Network Option</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={12} lg={5}>
                 <Select defaultValue="1" variant="outlined">
                   <Option value="1">11b/g/n</Option>
                   <Option value="2">11b/g</Option>
@@ -254,11 +254,11 @@ export default function Home() {
               </Grid>
             </Grid>
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">Wireless Channel</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={12} lg={5}>
                 <Select defaultValue="1" variant="outlined">
                   <Option value="1">Auto</Option>
                   <Option value="2">Channel 1 (2412MHz)</Option>
@@ -277,11 +277,11 @@ export default function Home() {
               <Typography level="body-sm">Current Channel:7</Typography>
             </Grid>
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
+              <Grid xs={12} lg={3}>
                 <Typography level="body-lg">Channel Width</Typography>
               </Grid>
 
-              <Grid xs={5}>
+              <Grid xs={12} lg={5}>
                 <Select defaultValue="1" variant="outlined">
                   <Option value="1">Auto</Option>
                   <Option value="2">20MHz</Option>
@@ -302,14 +302,12 @@ export default function Home() {
 const Results = () => (
   <>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} lg={3}>
         <Typography level="body-lg">Turn WiFi off during</Typography>
       </Grid>
 
-      <Grid xs={5}>
+      <Grid xs={12} lg={5}>
         <Grid container spacing={0} sx={{ flexGrow: 1 }}>
-          {/* <Grid xs={3}>
-              </Grid> */}
           <Select defaultValue="00" variant="outlined">
             <Option value="00">00</Option>
             <Option value="01">01</Option>
@@ -404,12 +402,12 @@ const Results = () => (
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} lg={3}>
         <Typography level="body-lg">Repeat</Typography>
       </Grid>
 
       <Grid xs={5}>
-        <Box sx={{ display: "flex", gap: 3 }}>
+        <Stack spacing={1} direction={{ xs: "column", lg: "row" }}>
           <Checkbox label="Everyday" variant="solid" />
           <Checkbox label="Mon" variant="solid" defaultChecked />
           <Checkbox label="Tue" variant="solid" defaultChecked />
@@ -418,7 +416,7 @@ const Results = () => (
           <Checkbox label="Fri" variant="solid" defaultChecked />
           <Checkbox label="Sat" variant="solid" />
           <Checkbox label="Sun" variant="solid" />
-        </Box>
+        </Stack>
       </Grid>
     </Grid>
     {/* <Grid container spacing={2} sx={{ flexGrow: 1 }}>
@@ -440,14 +438,13 @@ const handleClick = async () => {
   await sleep(2000);
 };
 const WPS = () => (
-  
   <>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} lg={3}>
         <Typography level="body-lg">PBC</Typography>
       </Grid>
 
-      <Grid xs={1}>
+      <Grid xs={12} lg={1}>
         <AsyncLoadingButton
           onClick={handleClick}
           disabled={undefined}
@@ -456,23 +453,25 @@ const WPS = () => (
           PBC
         </AsyncLoadingButton>
       </Grid>
-      <Grid xs={4}>
-      <Typography level="body-sm">
-        Click the PBC icon here or press the wps button on the router panel.
-      </Typography>
+      <Grid xs={12} lg={4}>
+        <Typography level="body-sm">
+          Click the PBC icon here or press the wps button on the router panel.
+        </Typography>
       </Grid>
     </Grid>
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-      <Grid xs={3}>
+      <Grid xs={12} lg={3}>
         <Typography level="body-lg">WPS PIN Code</Typography>
       </Grid>
 
-      <Grid xs={1}>95268231</Grid>
-      <Grid xs={5}>
-      <Typography level="body-sm">
-        If a wireless device requires a PIN code to do WPS PIN, copy the code to
-        it.
-      </Typography>
+      <Grid xs={12} lg={1}>
+        95268231
+      </Grid>
+      <Grid xs={12} lg={5}>
+        <Typography level="body-sm">
+          If a wireless device requires a PIN code to do WPS PIN, copy the code
+          to it.
+        </Typography>
       </Grid>
     </Grid>
   </>

@@ -21,7 +21,6 @@ export default function Header() {
   const [open, setOpen] = React.useState(false);
   return (
     <Box
-      // style={{ position: "fixed" }}
       sx={{
         display: "flex",
         flexGrow: 1,
@@ -34,7 +33,6 @@ export default function Header() {
         justifyContent="center"
         alignItems="center"
         spacing={0}
-        // sx={{ display: { xs: "none", sm: "flex" } }}
       >
         <div style={{ display: "flex" }}>
           <Box

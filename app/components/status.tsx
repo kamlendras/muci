@@ -1,22 +1,18 @@
 "use client";
-import Sheet from "@mui/joy/Sheet";
-import DevicesIcon from "@mui/icons-material/Devices";
 import * as React from "react";
+import Sheet from "@mui/joy/Sheet";
 import Stepper from "@mui/joy/Stepper";
 import Step, { stepClasses } from "@mui/joy/Step";
 import StepIndicator, { stepIndicatorClasses } from "@mui/joy/StepIndicator";
-import Typography, { typographyClasses } from "@mui/joy/Typography";
-import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-import AppRegistrationRoundedIcon from "@mui/icons-material/AppRegistrationRounded";
-import RouterIcon from "@mui/icons-material/Router";
-import LanguageIcon from "@mui/icons-material/Language";
+import Typography from "@mui/joy/Typography";
 import LinearProgress from "@mui/joy/LinearProgress";
-import FileUploadRoundedIcon from '@mui/icons-material/FileUploadRounded';
-import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
-import Groups2RoundedIcon from '@mui/icons-material/Groups2Rounded';
+import FileUploadRoundedIcon from "@mui/icons-material/FileUploadRounded";
+import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
+import Groups2RoundedIcon from "@mui/icons-material/Groups2Rounded";
 import Grid from "@mui/joy/Grid";
 import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
+
 export default function Home() {
   const [loading, setloading] = useState(true);
   useEffect(() => {
@@ -75,7 +71,6 @@ export default function Home() {
                 orientation="vertical"
                 indicator={
                   <StepIndicator variant="plain" color="neutral">
-                    {/* <DevicesIcon/> */}
                     <img
                       src="devices.svg"
                       alt="devices"
@@ -119,11 +114,17 @@ export default function Home() {
               </Step>
             </Stepper>
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={3}>
-                <Typography level="body-lg">Connection Status</Typography>
+              <Grid xs={5} sm={5} md={4} xl={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Connection Status
+                </Typography>
               </Grid>
-              <Grid xs={3}>
-                <Typography sx={{ color: "#4caf50" }} level="body-lg">
+              <Grid xs={7} sm={7} md={8} xl={9}>
+                <Typography
+                  sx={{ color: "#4caf50" }}
+                  level="body-lg"
+                  className="nowrap"
+                >
                   You can surf the Internet
                 </Typography>
               </Grid>
@@ -139,43 +140,52 @@ export default function Home() {
             sx={{
               p: 2,
               borderRadius: "lg",
-              // boxShadow: "xl",
             }}
           >
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid xs={4}>
+              <Grid xs={12} sm={4}>
                 <Typography level="h1" sx={{ color: "#2196f3" }}>
                   6
+                  <Typography level="body-md">
+                    <Grid xs={12} sm={4}>
+                      <Typography level="body-md" className="nowrap">
+                        <Groups2RoundedIcon /> Attached Devices
+                      </Typography>
+                    </Grid>
+                  </Typography>
                 </Typography>
               </Grid>
 
-              <Grid xs={4}>
+              <Grid xs={12} sm={4}>
                 <Typography level="h1" sx={{ color: "#4caf50" }}>
                   7.0
                   <Typography level="body-md" sx={{ color: "#9e9e9e" }}>
                     {" "}
                     KB/s
+                    <Grid xs={12} sm={4}>
+                      {" "}
+                      <Typography level="body-md" className="nowrap">
+                        <DownloadRoundedIcon /> Download Speed
+                      </Typography>
+                    </Grid>
                   </Typography>
                 </Typography>
               </Grid>
-              <Grid xs={4}>
+
+              <Grid xs={12} sm={4}>
                 <Typography level="h1" sx={{ color: "#ff9800" }}>
                   0.0
                   <Typography level="body-md" sx={{ color: "#9e9e9e" }}>
                     {" "}
                     KB/s
+                    <Grid xs={12} sm={4}>
+                      {" "}
+                      <Typography level="body-md" className="nowrap">
+                        <FileUploadRoundedIcon /> Upload Speed
+                      </Typography>
+                    </Grid>
                   </Typography>
                 </Typography>
-              </Grid>
-              <Grid xs={4}>
-                <Typography level="body-md"><Groups2RoundedIcon  /> Attached Devices</Typography>
-              </Grid>
-
-              <Grid xs={4}>
-                <Typography level="body-md" ><DownloadRoundedIcon/> Download Speed</Typography>
-              </Grid>
-              <Grid xs={4}>
-                <Typography level="body-md"><FileUploadRoundedIcon/> Upload Speed</Typography>
               </Grid>
             </Grid>
           </Sheet>
@@ -188,75 +198,110 @@ export default function Home() {
           >
             {/* <Grid container spacing={2} sx={{ flexGrow: 1 }}> */}
             <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid md={6} lg={3} >
-                <Typography level="body-lg">Connection Type</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Connection Type
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Dynamic IP</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Dynamic IP
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">WAN IP</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  WAN IP
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">192.168.29.230</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  192.168.29.230
+                </Typography>
               </Grid>
+
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Connection Duration
+                </Typography>
               </Grid>
-              <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Connection Duration</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  1d 4h 1m 8s
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">1d 4h 1m 8s</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Subnet Mask
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Subnet Mask</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  255.255.255.0
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">255.255.255.0</Typography>
-                </Grid>
-                <Grid container spacing={2} sx={{ flexGrow: 1 }}>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  WAN MAC
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">WAN MAC</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  04:95:E6:15:90:F8
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">04:95:E6:15:90:F8</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Default Gateway
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Default Gateway</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  192.168.29.1
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">192.168.29.1</Typography>
+
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  LAN IP
+                </Typography>
               </Grid>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  192.168.0.1
+                </Typography>
               </Grid>
-              <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">LAN IP</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Preferred DNS Server
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">192.168.0.1</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  192.168.29.1
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Preferred DNS Server</Typography>
+
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Firmware Version
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">192.168.29.1</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  v23.05.3
+                </Typography>
               </Grid>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  Alternative DNS Server
+                </Typography>
               </Grid>
-              <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Firmware Version</Typography>
+              <Grid xs={6} sm={6} md={6} lg={3}>
+                <Typography level="body-lg" className="nowrap">
+                  8.8.8.8
+                </Typography>
               </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">v23.05.3</Typography>
-              </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">Alternative DNS Server</Typography>
-              </Grid>
-              <Grid md={6} lg={3}>
-                <Typography level="body-lg">8.8.8.8</Typography>
-              </Grid>
-              </Grid>
+            </Grid>
             {/* </Grid> */}
           </Sheet>
         </Fade>
